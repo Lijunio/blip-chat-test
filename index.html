@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blip Chat Test</title>
+</head>
+<body>
+    <h1>Meu Site de Teste</h1>
+    <p>Bem-vindo ao meu site de teste para o Blip Chat.</p>
+
+    <!-- Adicione o script do Blip Chat aqui -->
+    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+    <script>
+        (function () {
+            window.onload = function () {
+                new BlipChat()
+                    .withAppKey('dGVsZXNzYXVkZTo1M2ExZTQyNS03MWQxLTRmMTQtYWIxYS1mMTU0YTY5NjQ3ZTE=')
+                    .withButton({"color":"#0096fa","icon":""})
+                    .withCustomCommonUrl('https://elias-junio-bqqie.chat.blip.ai/')
+                    .build();
+            }
+        })();
+    </script>
+</body>
+</html>
