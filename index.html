@@ -13,7 +13,12 @@
     <script src="https://unpkg.com/blip-chat-widget@1.10.*" type="text/javascript"></script>
     <script>
         (function () {
-            window.onload = function () {
+            var blipChat;
+
+            function startChat() {
+                if (blipChat) {
+                    blipChat.destroy(); // Destruir instância anterior do chat (se existir)
+                }
 
                 var customStyle = `#message-input {
                     box-sizing: border-box;
@@ -27,12 +32,22 @@
                     color: white;
                 }`
 
-                new BlipChat()
+                blipChat = new BlipChat()
                     .withAppKey('dGVsZXNzYXVkZTE6MGRkYmRhY2MtMjU4Ny00YjIwLTk2OTItMmVmYjhjOTU4M2Yx')
                     .withButton({"color":"#0c0c0d","icon":"https://blipmediastore.blip.ai/public-medias/Media_bc7957e5-973b-4724-9056-72060e0e7d9e"})
                     .withCustomCommonUrl('https://elias-junio-bqqie.chat.blip.ai/')
                     .withCustomStyle(customStyle)
                     .build();
+            }
+
+            window.onload = function () {
+                startChat(); // Iniciar chat quando a página carregar
+
+                // Adicionar botão de reinício
+                var restartButton = document.createElement("button");
+                restartButton.innerHTML = "Reiniciar Chat";
+                restartButton.addEventListener("click", startChat);
+                document.body.appendChild(restartButton);
             }
         })();
     </script>
