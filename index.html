@@ -3,53 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blip Chat Test</title>
+    <title>Meu Projeto Incrível</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            color: #4285f4;
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        #blip-chat-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        /* Adicione outros estilos personalizados conforme necessário */
+
+        #blip-chat-open-iframe {
+            background-color: #4285f4 !important;
+            color: #fff !important;
+        }
+
+        #blip-chat-icon {
+            display: block;
+            margin: 15px auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>Meu Site de Teste</h1>
-    <p>Bem-vindo ao meu site de teste para o Blip Chat.</p>
+    <h1>Bem-vindo ao Meu Projeto Incrível</h1>
+    <p>Explore os recursos incríveis disponíveis e entre em contato através do nosso chat interativo abaixo.</p>
 
     <!-- Adicione o script do Blip Chat aqui  -->
     <script src="https://unpkg.com/blip-chat-widget@1.10.*" type="text/javascript"></script>
     <script>
         (function () {
-            var blipChat;
-
-            function startChat() {
-                if (blipChat) {
-                    blipChat.destroy(); // Destruir instância anterior do chat (se existir)
-                }
+            window.onload = function () {
 
                 var customStyle = `#message-input {
                     box-sizing: border-box;
-                    border: 1px solid #0CC8CC;
+                    border: 1px solid #4285f4;
                     border-radius: 6px;
-                    background: #252B39;
+                    background: #ffffff;
                 }
                 #message-input textarea {
-                    background: #252B39;
-                    font-size: 12px;
-                    color: white;
+                    background: #ffffff;
+                    font-size: 14px;
+                    color: #333;
                 }`
 
-                blipChat = new BlipChat()
+                new BlipChat()
                     .withAppKey('dGVsZXNzYXVkZTE6MGRkYmRhY2MtMjU4Ny00YjIwLTk2OTItMmVmYjhjOTU4M2Yx')
-                    .withButton({"color":"#0c0c0d","icon":"https://blipmediastore.blip.ai/public-medias/Media_bc7957e5-973b-4724-9056-72060e0e7d9e"})
+                    .withButton({"color":"#4285f4","icon":"https://blipmediastore.blip.ai/public-medias/Media_bc7957e5-973b-4724-9056-72060e0e7d9e"})
                     .withCustomCommonUrl('https://elias-junio-bqqie.chat.blip.ai/')
                     .withCustomStyle(customStyle)
                     .build();
             }
-
-            window.onload = function () {
-                startChat(); // Iniciar chat quando a página carregar
-
-                // Adicionar botão de reinício
-                var restartButton = document.createElement("button");
-                restartButton.innerHTML = "Reiniciar Chat";
-                restartButton.addEventListener("click", startChat);
-                document.body.appendChild(restartButton);
-            }
         })();
     </script>
+
+    <div id="blip-chat-container">
+        <div id="blip-chat-open-iframe" class="opened" style="height: 48px; visibility: visible; opacity: 1;">
+            <div id="blip-chat-notifications" style="opacity: 0;">0</div>
+            <img id="blip-chat-icon" src="https://blipmediastore.blip.ai/public-medias/Media_bc7957e5-973b-4724-9056-72060e0e7d9e" alt="">
+        </div>
+        <iframe src="https://elias-junio-bqqie.chat.blip.ai/?appKey=dGVsZXNzYXVkZTE6MGRkYmRhY2MtMjU4Ny00YjIwLTk2OTItMmVmYjhjOTU4M2Yx" id="blip-chat-iframe" frameborder="0" allow="geolocation; microphone" allowfullscreen="true" class="blip-chat-iframe-opened" style="bottom: calc(103px); max-height: 790px;"></iframe>
+    </div>
 </body>
 </html>
