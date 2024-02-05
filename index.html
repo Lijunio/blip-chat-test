@@ -15,7 +15,7 @@
         }
 
         .image-container {
-            max-width: 100%;
+            width: 100vw; /* Ajustado para cobrir a largura total da viewport */
             overflow: hidden;
         }
 
@@ -28,12 +28,12 @@
 
         h1, p {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 20px; /* Ajustado para ficar no topo da página */
             margin: 0;
             color: #fff;
             text-align: center;
             width: 100%;
+            z-index: 1; /* Certifica-se de que o texto esteja acima da imagem */
         }
 
     </style>
