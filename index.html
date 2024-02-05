@@ -8,22 +8,25 @@
     <style>
         body {
             margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             overflow: hidden; /* Removendo a barra de rolagem */
             background-color: #708e94; /* Cor de fundo verde claro */
         }
 
+        header {
+            padding: 20px;
+            background-color: #0c0c0d; /* Cor de fundo para o cabeçalho */
+            color: #fff;
+            text-align: center;
+        }
+
         .image-container {
-            height: 100vh;
-            position: relative; /* Adicionado para controlar a posição dos elementos filhos */
+            height: calc(100vh - 40px); /* Ajuste para levar em conta a altura do cabeçalho */
+            position: relative;
             text-align: center; /* Centralizando a imagem horizontalmente */
         }
 
         .image-container img {
-            width: auto; /* Ajustado para manter a proporção original */
+            width: auto;
             height: 100%;
             object-fit: cover;
             display: inline-block; /* Ajustando para exibir como bloco inline */
@@ -31,6 +34,11 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Telessaude</h1>
+        <h2>Teste ChatBlip</h2>
+    </header>
+
     <div class="image-container">
         <img src="https://raw.githubusercontent.com/Lijunio/blip-chat-test/main/img1.png" alt="Imagem de fundo">
     </div>
