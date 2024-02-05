@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blip Chat Test</title>
-    <h1>Meu Site de Teste</h1>
-    <p>Bem-vindo ao meu site de teste para o Blip Chat.</p>
 
     <style>
         body {
@@ -15,11 +13,13 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden; /* Removendo a barra de rolagem */
+            background-color: #c8e6c9; /* Cor de fundo verde claro */
         }
 
         .image-container {
             height: 100vh;
             overflow: hidden;
+            position: relative; /* Adicionado para controlar a posição dos elementos filhos */
         }
 
         .image-container img {
@@ -28,16 +28,11 @@
             object-fit: cover;
             display: block;
             margin: 0 auto; /* Centralizando a imagem horizontalmente */
-        }
-
-        h1, p {
-            position: absolute;
-            top: 20px;
-            margin: 0;
-            color: #fff;
-            text-align: center;
-            width: 100%;
-            z-index: 1;
+            position: absolute; /* Colocando a imagem acima do fundo */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
     </style>
