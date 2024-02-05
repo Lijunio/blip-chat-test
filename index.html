@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blip Chat Test</title>
+    <h1>Meu Site de Teste</h1>
+    <p>Bem-vindo ao meu site de teste para o Blip Chat.</p>
 
     <style>
         body {
@@ -12,40 +14,38 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden; /* Removendo a barra de rolagem */
         }
 
         .image-container {
-            width: 100vw; /* Ajustado para cobrir a largura total da viewport */
+            height: 100vh;
             overflow: hidden;
         }
 
         .image-container img {
-            width: 100%;
+            width: auto; /* Ajustado para manter a proporção original */
             height: 100%;
             object-fit: cover;
             display: block;
+            margin: 0 auto; /* Centralizando a imagem horizontalmente */
         }
 
         h1, p {
             position: absolute;
-            top: 20px; /* Ajustado para ficar no topo da página */
+            top: 20px;
             margin: 0;
             color: #fff;
             text-align: center;
             width: 100%;
-            z-index: 1; /* Certifica-se de que o texto esteja acima da imagem */
+            z-index: 1;
         }
 
     </style>
-
 </head>
 <body>
     <div class="image-container">
         <img src="https://raw.githubusercontent.com/Lijunio/blip-chat-test/main/img1.png" alt="Imagem de fundo">
     </div>
-
-    <h1>Meu Site de Teste</h1>
-    <p>Bem-vindo ao meu site de teste para o Blip Chat.</p>
 
     <!-- Adicione o script do Blip Chat aqui  -->
     <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
