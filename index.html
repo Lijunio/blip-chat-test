@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blip Chat Test</title>
+    <title>Blip Chat Telessaúde</title>
 
     <style>
         body {
@@ -13,37 +13,21 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden; /* Removendo a barra de rolagem */
-            background-color: #c8e6c9; /* Cor de fundo verde claro */
+            background-color: #708e94; /* Cor de fundo verde claro */
         }
 
         .image-container {
             height: 100vh;
             position: relative; /* Adicionado para controlar a posição dos elementos filhos */
+            text-align: center; /* Centralizando a imagem horizontalmente */
         }
 
         .image-container img {
             width: auto; /* Ajustado para manter a proporção original */
             height: 100%;
             object-fit: cover;
-            display: block;
-            margin: 0 auto; /* Centralizando a imagem horizontalmente */
-            position: absolute; /* Colocando a imagem acima do fundo */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            display: inline-block; /* Ajustando para exibir como bloco inline */
         }
-
-        h1, p {
-            position: absolute;
-            top: 20px;
-            margin: 0;
-            color: #fff;
-            text-align: center;
-            width: 100%;
-            z-index: 1;
-        }
-
     </style>
 </head>
 <body>
