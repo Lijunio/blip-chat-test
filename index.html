@@ -42,6 +42,16 @@
         #blip-chat-open-iframe {
             bottom: 0 !important;
             top: auto !important;
+            animation: shake 1s infinite; /* Adiciona a animação ao botão */
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-10px);
+            }
         }
     </style>
 </head>
@@ -51,17 +61,17 @@
     </div>
 
     <!-- Adicione o script do Blip Chat aqui  -->
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
-<script>
-    (function () {
-        window.onload = function () {
-            new BlipChat()
-                .withAppKey('dGVsZXNzYXVkZTE6MGRkYmRhY2MtMjU4Ny00YjIwLTk2OTItMmVmYjhjOTU4M2Yx')
-                .withButton({"color":"#0096fa","icon":"https://blipmediastore.blip.ai/public-medias/Media_b7363a65-a04c-4812-9f82-47e602e8bccb"})
-                .withCustomCommonUrl('https://elias-junio-bqqie.chat.blip.ai/')
-                .build();
-        }
-    })();
-</script>
+    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+    <script>
+        (function () {
+            window.onload = function () {
+                new BlipChat()
+                    .withAppKey('dGVsZXNzYXVkZTE6MGRkYmRhY2MtMjU4Ny00YjIwLTk2OTItMmVmYjhjOTU4M2Yx')
+                    .withButton({"color":"#0096fa","icon":"https://blipmediastore.blip.ai/public-medias/Media_b7363a65-a04c-4812-9f82-47e602e8bccb"})
+                    .withCustomCommonUrl('https://elias-junio-bqqie.chat.blip.ai/')
+                    .build();
+            }
+        })();
+    </script>
 </body>
 </html>
