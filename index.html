@@ -13,7 +13,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative; /* Adicionado para permitir posicionamento absoluto */
         }
 
         header {
@@ -44,13 +43,13 @@
             bottom: 0 !important;
             top: auto !important;
             animation: shake 1s infinite; /* Adiciona a animação ao botão */
-            position: relative; /* Adicionado para permitir posicionamento absoluto */
-            z-index: 1; /* Garante que o botão esteja acima do balão */
+            position: relative; /* Adiciona posição relativa para o posicionamento absoluto do balão */
         }
 
-        #custom-tooltip {
+        #blip-chat-open-iframe::before {
+            content: "Converse conosco!";
             position: absolute;
-            bottom: 40px; /* Ajuste a posição conforme necessário */
+            top: -30px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #0096fa;
@@ -58,10 +57,9 @@
             padding: 5px;
             border-radius: 5px;
             display: none;
-            z-index: 0; /* Garante que o balão esteja abaixo do botão */
         }
 
-        #blip-chat-open-iframe:hover + #custom-tooltip {
+        #blip-chat-open-iframe:hover::before {
             display: block;
         }
 
@@ -93,9 +91,5 @@
             }
         })();
     </script>
-
-    <!-- Adicione o balão de mensagem personalizado -->
-    <div id="custom-tooltip">Converse conosco!</div>
-    <button id="blip-chat-open-iframe">Blip Chat</button>
 </body>
 </html>
