@@ -47,20 +47,35 @@
         }
 
         #blip-chat-open-iframe::before {
-            content: "Converse conosco!";
+            content: "";
             position: absolute;
-            top: -30px;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #0096fa transparent;
+            display: block; /* Exibe o triângulo do balão */
+        }
+
+        #blip-chat-message {
+            position: absolute;
+            top: -45px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #0096fa;
             color: #fff;
-            padding: 5px;
-            border-radius: 5px;
+            padding: 8px;
+            border-radius: 8px;
             display: block; /* Exibe a mensagem por padrão */
         }
 
         .blip-chat-clicked::before {
-            display: none !important; /* Oculta a mensagem quando o botão é clicado */
+            display: none; /* Oculta o triângulo quando o botão é clicado */
+        }
+
+        .blip-chat-clicked #blip-chat-message {
+            display: none; /* Oculta a mensagem quando o botão é clicado */
         }
 
         @keyframes shake {
