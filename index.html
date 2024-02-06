@@ -45,6 +45,22 @@
             animation: shake 1s infinite; /* Adiciona a animação ao botão */
         }
 
+        .custom-tooltip {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0096fa;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        #blip-chat-open-iframe:hover + .custom-tooltip {
+            display: block;
+        }
+
         @keyframes shake {
             0%, 100% {
                 transform: translateX(0);
@@ -73,5 +89,8 @@
             }
         })();
     </script>
+
+    <!-- Adicione o balão de mensagem personalizado -->
+    <div class="custom-tooltip">Converse conosco!</div>
 </body>
 </html>
