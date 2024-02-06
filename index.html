@@ -43,10 +43,10 @@
             bottom: 0 !important;
             top: auto !important;
             animation: shake 1s infinite; /* Adiciona a animação ao botão */
-            position: relative; /* Adiciona posição relativa para o posicionamento absoluto do balão */
+            position: relative; /* Adiciona posição relativa para o posicionamento absoluto da mensagem */
         }
 
-        #blip-chat-open-iframe:hover::before {
+        #blip-chat-open-iframe::before {
             content: "Converse conosco!";
             position: absolute;
             top: -30px;
@@ -56,6 +56,11 @@
             color: #fff;
             padding: 5px;
             border-radius: 5px;
+            display: block; /* Exibe a mensagem por padrão */
+        }
+
+        #blip-chat-open-iframe.clicked::before {
+            display: none; /* Oculta a mensagem quando o botão é clicado */
         }
 
         @keyframes shake {
@@ -78,11 +83,16 @@
     <script>
         (function () {
             window.onload = function () {
-                new BlipChat()
+                var blipChat = new BlipChat()
                     .withAppKey('dGVsZXNzYXVkZTE6MGRkYmRhY2MtMjU4Ny00YjIwLTk2OTItMmVmYjhjOTU4M2Yx')
                     .withButton({"color":"#0096fa","icon":"https://blipmediastore.blip.ai/public-medias/Media_b7363a65-a04c-4812-9f82-47e602e8bccb"})
                     .withCustomCommonUrl('https://elias-junio-bqqie.chat.blip.ai/')
                     .build();
+
+                // Adiciona a classe 'clicked' ao botão quando o botão é clicado
+                document.getElementById('blip-chat-open-iframe').addEventListener('click', function () {
+                    blipChat.widget.classList.add('clicked');
+                });
             }
         })();
     </script>
