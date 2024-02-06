@@ -46,7 +46,7 @@
             position: relative; /* Adiciona posição relativa para o posicionamento absoluto do balão */
         }
 
-        #blip-chat-open-iframe::before {
+        #blip-chat-open-iframe:hover::before {
             content: "Converse conosco!";
             position: absolute;
             top: -30px;
@@ -56,11 +56,6 @@
             color: #fff;
             padding: 5px;
             border-radius: 5px;
-            display: none;
-        }
-
-        #blip-chat-open-iframe:hover::before {
-            display: block;
         }
 
         @keyframes shake {
