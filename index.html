@@ -80,15 +80,15 @@
     </div>
 
     <!-- Adicione o script do Blip Chat aqui  -->
-    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
-    <script>
-        (function () {
-            window.onload = function () {
-                var blipChat = new BlipChat()
-                    .withAppKey('dGVsZXNzYXVkZTE6MGRkYmRhY2MtMjU4Ny00YjIwLTk2OTItMmVmYjhjOTU4M2Yx')
-                    .withButton({"color":"#0096fa","icon":"https://blipmediastore.blip.ai/public-medias/Media_b7363a65-a04c-4812-9f82-47e602e8bccb"})
-                    .withCustomCommonUrl('https://elias-junio-bqqie.chat.blip.ai/')
-                    .build();
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+<script>
+    (function () {
+        window.onload = function () {
+            new BlipChat()
+                .withAppKey('dGVsZXNzYXVkZTI6ZWY5YTQyZGUtMDY4My00YjM1LWJmMDItNDMxNDdlMzczZDA1')
+                .withButton({"color":"#0096fa","icon":""})
+                .withCustomCommonUrl('https://fundep.chat.blip.ai/')
+                .build();
 
                 // Adiciona a classe 'blip-chat-clicked' ao botão quando o botão é clicado
                 document.getElementById('blip-chat-open-iframe').addEventListener('click', function () {
@@ -99,3 +99,4 @@
     </script>
 </body>
 </html>
+            
