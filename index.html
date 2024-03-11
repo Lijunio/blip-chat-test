@@ -25,12 +25,12 @@
             top: 0;
         }
 
-        .image-container {
-            flex: 1;
-            position: relative;
-            text-align: center; /* Centralizando a imagem horizontalmente */
-            overflow: hidden; /* Removendo barra de rolagem */
-        }
+        .image-container img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
 
         .image-container img {
             width: auto;
