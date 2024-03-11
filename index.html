@@ -84,18 +84,25 @@
 <script>
     (function () {
         window.onload = function () {
-            new BlipChat()
+            var blipClient = new BlipChat()
                 .withAppKey('dGVsZXNzYXVkZTI6ZWY5YTQyZGUtMDY4My00YjM1LWJmMDItNDMxNDdlMzczZDA1')
                 .withButton({"color":"#0096fa","icon":"https://blipmediastore.blip.ai/public-medias/Media_31a4ddcc-44f6-42bf-9396-a0c7e31a9770"})
                 .withCustomCommonUrl('https://fundep.chat.blip.ai/')
+                .withEventHandler(BlipChat.LOAD_EVENT, function () {
+                    // Envia automaticamente a mensagem "Olá"
+                    blipClient.sendMessage({
+                        "type": "text/plain",
+                        "content": "Olá"
+                    });
+                })
                 .build();
 
-                // Adiciona a classe 'blip-chat-clicked' ao botão quando o botão é clicado
-                document.getElementById('blip-chat-open-iframe').addEventListener('click', function () {
-                    document.getElementById('blip-chat-open-iframe').classList.add('blip-chat-clicked');
-                });
-            }
-        })();
-    </script>
+            // Adiciona a classe 'blip-chat-clicked' ao botão quando o botão é clicado
+            document.getElementById('blip-chat-open-iframe').addEventListener('click', function () {
+                document.getElementById('blip-chat-open-iframe').classList.add('blip-chat-clicked');
+            });
+        }
+    })();
+</script>
 </body>
 </html>
