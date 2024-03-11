@@ -94,11 +94,14 @@
             document.getElementById('blip-chat-open-iframe').addEventListener('click', function () {
                 document.getElementById('blip-chat-open-iframe').classList.add('blip-chat-clicked');
 
-                // Obtém a referência do campo de texto e define o valor como "Olá"
-                var msgTextarea = document.getElementById('msg-textarea');
-                if (msgTextarea) {
-                    msgTextarea.value = 'Olá';
-                }
+                // Espera um curto período para garantir que o componente do Blip Chat esteja totalmente carregado
+                setTimeout(function () {
+                    // Obtém o controle do Blip Chat
+                    var blipControl = blipChat.getBlipWebchat();
+
+                    // Envia automaticamente a mensagem "Olá"
+                    blipControl.sendMessage("Olá");
+                }, 500);
             });
         }
     })();
