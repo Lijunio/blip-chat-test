@@ -47,17 +47,19 @@
 
         #blip-chat-open-iframe::before {
             content: "Olá!\nSe precisar de ajuda,\nme chame aqui!";
+            font-family: "carbona blip";
             position: absolute;
-            top: -70px;
-            left: 50%;
-            background-color: #0096fa;
-            color: #fff;
-            padding: 15px;
-            border-radius: 15px;
-            display: block; /* Exibe o balão da mensagem */
-            white-space: pre-line; /* Mantém a quebra de linha */
-            transform: translateX(-50%);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-flow: row wrap;
+          background: #c5d9fb;
+          color: #3d3d3d;
+          width: auto;
+          max-width: 15em;
+          border-radius: 0.8125em 0.8125em 0.125em 0.8125em;
+          box-shadow: 0.0625em 0.25em 0.5625em rgb(0 0 0 / 10%);
+          z-index: 980;
+          animation: toggle-bubble 0.5s ease-out;
+          line-height: 1.5em;
+          transform-origin: 100% 100%;
         }
 
         .blip-chat-clicked::before {
