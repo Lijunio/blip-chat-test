@@ -46,17 +46,18 @@
         }
 
         #blip-chat-open-iframe::before {
-            content: "Olá!\ASe precisar de ajuda,\Ame chame aqui!";
+            content: "Olá!\nSe precisar de ajuda,\nme chame aqui!";
             position: absolute;
             top: -70px;
-            left: -50%;
+            left: 50%;
             background-color: #0096fa;
             color: #fff;
-            padding: 8px;
-            border-radius: 8px;
+            padding: 15px;
+            border-radius: 15px;
             display: block; /* Exibe o balão da mensagem */
             white-space: pre-line; /* Mantém a quebra de linha */
             transform: translateX(-50%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .blip-chat-clicked::before {
