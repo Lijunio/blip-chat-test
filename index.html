@@ -39,29 +39,36 @@
             display: inline-block; /* Ajustando para exibir como bloco inline */
         }
 
-        #blip-chat-open-iframe {
-            bottom: 0 !important;
-            top: auto !important;
-            animation: shake 1s infinite; /* Adiciona a animação ao botão */
-            position: relative; /* Adiciona posição relativa para o posicionamento absoluto da mensagem */
+        .containerMessage {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
 
-        #blip-chat-open-iframe::before {
-            content: "Olá!\ASe precisar de ajuda,\Ame chame aqui!";
-            position: absolute;
-            top: -70px;
-            left: -50%;
-            background-color: #0096fa;
-            color: #fff;
-            padding: 8px;
-            border-radius: 8px;
-            display: block; /* Exibe o balão da mensagem */
-            white-space: pre-line; /* Mantém a quebra de linha */
-            transform: translateX(-50%);
+        .message-bubble {
+            font-family: "carbona blip";
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            background: #c5d9fb;
+            color: #3d3d3d;
+            width: auto;
+            max-width: 15em;
+            border-radius: 0.8125em 0.8125em 0.125em 0.8125em;
+            box-shadow: 0.0625em 0.25em 0.5625em rgb(0 0 0 / 10%);
+            z-index: 980;
+            animation: toggle-bubble 0.5s ease-out;
+            line-height: 1.5em;
+            transform-origin: 100% 100%;
         }
 
-        .blip-chat-clicked::before {
-             display: none !important; /* Oculta o balão da mensagem quando o botão é clicado */
+        .textContainer {
+            padding: 1em 1.5em;
+        }
+
+        #text-bubble {
+            cursor: pointer;
         }
 
         @keyframes shake {
@@ -72,23 +79,42 @@
                 transform: translateX(-10px);
             }
         }
+
+        @keyframes toggle-bubble {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img src="https://raw.githubusercontent.com/Lijunio/blip-chat-test/main/site.png" alt="Imagem de fundo">
+        <img src="https://raw.githubusercontent.com/Lijunio/blip-chat-test/main/img1.png" alt="Imagem de fundo">
+    </div>
+
+    <div class="containerMessage">
+        <div class="message-bubble" id="bubble">
+            <div class="textContainer">
+                <span id="text-bubble" onclick="functionTT('Oi')">Olá, sou o Contato inteligente da Blip. <b>Como posso te ajudar?</b></span>
+            </div>
+        </div>
     </div>
 
     <!-- Adicione o script do Blip Chat aqui  -->
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
-<script>
-    (function () {
-        window.onload = function () {
-            new BlipChat()
-                .withAppKey('dGVsZXNzYXVkZTI6ZWY5YTQyZGUtMDY4My00YjM1LWJmMDItNDMxNDdlMzczZDA1')
-                .withButton({"color":"#0096fa","icon":"https://blipmediastore.blip.ai/public-medias/Media_31a4ddcc-44f6-42bf-9396-a0c7e31a9770"})
-                .withCustomCommonUrl('https://fundep.chat.blip.ai/')
-                .build();
+    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+    <script>
+        (function () {
+            window.onload = function () {
+                new BlipChat()
+                    .withAppKey('dGVsZXNzYXVkZTI6ZWY5YTQyZGUtMDY4My00YjM1LWJmMDItNDMxNDdlMzczZDA1')
+                    .withButton({"color":"#0096fa","icon":"https://blipmediastore.blip.ai/public-medias/Media_31a4ddcc-44f6-42bf-9396-a0c7e31a9770"})
+                    .withCustomCommonUrl('https://fundep.chat.blip.ai/')
+                    .build();
 
                 // Adiciona a classe 'blip-chat-clicked' ao botão quando o botão é clicado
                 document.getElementById('blip-chat-open-iframe').addEventListener('click', function () {
@@ -99,4 +125,3 @@
     </script>
 </body>
 </html>
-            
