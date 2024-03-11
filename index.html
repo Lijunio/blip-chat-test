@@ -49,7 +49,7 @@
     content: "Olá!\AMe chamo Eliza, como posso te ajudar?";
     position: absolute;
     display: block;
-    top: -55px;
+    top: -50px;
     left: -100px;
     padding: 6px;
     background-color: #c5d9fb;
@@ -94,11 +94,11 @@
             document.getElementById('blip-chat-open-iframe').addEventListener('click', function () {
                 document.getElementById('blip-chat-open-iframe').classList.add('blip-chat-clicked');
 
-                // Envia a mensagem "Olá" quando o botão é clicado
-                blipChat.sendMessageEvent({
-                    type: 'text/plain',
-                    content: 'Olá'
-                });
+                // Obtém a referência do campo de texto e define o valor como "Olá"
+                var msgTextarea = document.getElementById('msg-textarea');
+                if (msgTextarea) {
+                    msgTextarea.value = 'Olá';
+                }
             });
         }
     })();
