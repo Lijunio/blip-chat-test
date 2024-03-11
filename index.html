@@ -49,7 +49,7 @@
             content:"Olá!\AMe chamo Eliza,<b>como posso te ajudar?</b>";
             position: absolute;
             display: block;
-            top: -60px;
+            top: -55px;
             left: -100px;
 	    padding: 6px;
             background-color: #c5d9fb;
@@ -59,6 +59,9 @@
             transform: translateX(-50%);
 	    width: 200px; /* Ajuste a largura conforme necessário */
         }
+	#blip-chat-open-iframe::before b {
+    	font-weight: bold;
+	}
 
         .blip-chat-clicked::before {
              display: none !important; /* Oculta o balão da mensagem quando o botão é clicado */
