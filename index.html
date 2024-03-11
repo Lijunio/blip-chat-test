@@ -46,7 +46,7 @@
         }
 
         #blip-chat-open-iframe::before {
-            content:"Olá!\AMe chamo Eliza, como posso te ajudar?";
+            content:"Olá!\AMe chamo Eliza, <span class='bold-text'>como posso te ajudar?</span>";
             position: absolute;
             display: block;
             top: -50px;
@@ -60,8 +60,8 @@
             width: 200px; /* Ajuste a largura conforme necessário */
         }
 
-        #blip-chat-open-iframe span {
-            font-weight: bold;
+        .bold-text {
+            font-weight: bold; /* Adiciona negrito à parte desejada */
         }
 
         .blip-chat-clicked::before {
